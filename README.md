@@ -1,7 +1,7 @@
 # Requirements
 + Jdk1.8 http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html
-+ Maven-3.3.9 http://maven.apache.org/docs/3.3.9/release-notes.html
-+ Eclipse https://www.eclipse.org/downloads/packages/eclipse-ide-java-ee-developers/oxygen2
++ Maven-3.5.3 https://mirrors.tuna.tsinghua.edu.cn/apache/maven/maven-3/3.5.3/binaries/
++ Eclipse http://sqdownb.onlinedown.net/down/eclipse-jee-mars-1-win32-x86_64.zip
 
 # How to run
 + Run eclipse
