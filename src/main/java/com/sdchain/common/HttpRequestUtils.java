@@ -1,4 +1,4 @@
-﻿package com.sdchain.sdchainRest;
+package com.sdchain.common;
 
 import net.sf.json.JSONObject;
 
@@ -58,7 +58,6 @@ public class HttpRequestUtils {
 			HttpResponse result = httpClient.execute(method);
 			url = URLDecoder.decode(url, "UTF-8");
 			/** 请求发送成功，并得到响应 **/
-
 			String str = "";
 			try {
 				/** 读取服务器返回过来的json字符串数据 **/
@@ -71,7 +70,6 @@ public class HttpRequestUtils {
 			} catch (Exception e) {
 				logger.error("post请求提交失败:" + url, e);
 			}
-
 		} catch (IOException e) {
 			logger.error("post请求提交失败:" + url, e);
 		}
@@ -94,18 +92,32 @@ public class HttpRequestUtils {
 			// 发送get请求
 			HttpGet request = new HttpGet(url);
 			HttpResponse response = client.execute(request);
-			/** 请求发送成功，并得到响应 **/
-
 			/** 读取服务器返回过来的json字符串数据 **/
 			String strResult = EntityUtils.toString(response.getEntity());
 			/** 把json字符串转换成json对象 **/
 			jsonResult = JSONObject.fromObject(strResult);
 			url = URLDecoder.decode(url, "UTF-8");
-
 		} catch (IOException e) {
 			logger.error("get请求提交失败:" + url, e);
 		}
 		return jsonResult;
+	}
+
+	public static void main(String[] args) {
+		try {
+			JSONObject s = httpGet("https://test-rest.sdchain.io/v1/wallet/new");
+			
+//			JSONObject s = httpGet("http://hengwell.asuscomm.com:25990/v1/wallet/new");
+//			if(Boolean.parseBoolean(s.get("success").toString())){
+//				JSONObject settings = (JSONObject)s.get("settings");
+//				Boolean.parseBoolean(settings.get("default_hwelltech").toString());
+//			}
+			logger.info(s.toString());
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+		
 	}
 
 }
