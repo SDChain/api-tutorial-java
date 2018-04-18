@@ -10,12 +10,12 @@ public class Transaction {
     
     /**
      * 
-     * <h6>获取交易详情.</h6>
+     * <h6>Get transaction information.</h6>
      * <pre>
-     * 根据交易hash获取指定交易的详情.
+     * Get details of the specified deal based on  transaction hash.
      * </pre>
      * 
-     * @param account 交易hash
+     * @param account Transaction hash
      * @return
      */
     public static JSONObject getTransactionDetail(String hash) {

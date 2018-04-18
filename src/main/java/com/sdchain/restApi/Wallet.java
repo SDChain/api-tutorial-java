@@ -8,7 +8,7 @@ import net.sf.json.JSONObject;
 public class Wallet {
     /**
      * 
-     * <h6>获取新的钱包.</h6>
+     * <h6>Generate New Wallet.</h6>
      * <pre>
      * </pre>
      * 
@@ -21,9 +21,9 @@ public class Wallet {
 
     /**
      * 
-     * <h6>激活钱包.</h6>
+     * <h6>Activate wallet.</h6>
      * <pre>
-     * 用已有账号向需要激活的钱包地址发送至少6个SDA.
+     * Send at least 6 SDAs to the wallet address that needs to be activated using an existing account.
      * </pre>
      * 
      * @param account
@@ -35,12 +35,12 @@ public class Wallet {
 
     /**
      * 
-     * <h6>查询钱包余额.</h6>
+     * <h6>Get wallet balance.</h6>
      * <pre>
-     * 查询钱包余额.
+     * Get wallet balance.
      * </pre>
      * 
-     * @param account 需要查询的六域链地址
+     * @param account SDChain address
      * @return
      */
     public static JSONObject getBalance(String account) {

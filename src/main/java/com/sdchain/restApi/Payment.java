@@ -10,28 +10,28 @@ public class Payment {
 
     /**
      * 
-     * <h6>支付.</h6>
+     * <h6>Payment.</h6>
      * <pre>
-     * 支付.
+     * Payment.
      * </pre>
      * 
-     * @param source_account 六域链支付地址
-     * @param secret 六域链支付地址的秘钥
-     * @param destination_account 六域链收款地址
-     * @param num 数量
+     * @param source_account SDChain payment address
+     * @param secret Key of SDChain payment address
+     * @param destination_account SDChain receipt address
+     * @param num Amount
      * @return
      */
     public static JSONObject payment(String source_account, String secret, String destination_account, String num) {
         JSONObject jsonParam = new JSONObject();
-        // 添加秘钥
+        // Add payment secret
         jsonParam.put("secret", secret);
-        // 添加支付信息
+        // Add payment information
         JSONObject payment = new JSONObject();
-        // 添加支付账号
+        // Add payment address
         payment.put("source_account", source_account);
-        // 添加收款账号
+        // Add receipt address
         payment.put("destination_account", destination_account);
-        // 添加数量
+        // Add amount
         payment.put("amount", num);
         jsonParam.put("payment", payment);
         JSONObject s = HttpRequestUtils.httpPost(Constant.BASE_URL + "/v1/accounts/payments/" + source_account + "?submit=true",
@@ -41,33 +41,33 @@ public class Payment {
 
     /**
      * 
-     * <h6>支付(带有备注).</h6>
+     * <h6>Payment(Memos).</h6>
      * <pre>
-     * 支付(带有备注).
+     * Payment(Memos).
      * </pre>
      * 
-     * @param source_account 六域链支付地址
-     * @param secret 六域链支付地址的秘钥
-     * @param destination_account 六域链收款地址
-     * @param num 数量
-     * @param memoString 备注
+     * @param source_account SDChain payment address
+     * @param secret Key of SDChain payment address
+     * @param destination_account SDChain receipt address
+     * @param num Amount
+     * @param memoString Memos
      * @return
      */
     public static JSONObject paymentHasMemos(String source_account, String secret, String destination_account,
             String num, String memoString) {
         JSONObject jsonParam = new JSONObject();
-        // 添加秘钥
+        //  Add payment secret
         jsonParam.put("secret", secret);
 
-        // 添加支付信息
+        // Add payment information
         JSONObject payment = new JSONObject();
-        // 添加支付账号
+        // Add payment address
         payment.put("source_account", source_account);
-        // 添加收款账号
+        // Add receipt address
         payment.put("destination_account", destination_account);
-        // 添加数量
+        // Add amount
         payment.put("amount", num);
-        // 添加备注
+        // Add memos
         JSONObject memo = new JSONObject();
         memo.put("MemoType", "memo");
         memo.put("MemoData", memoString);
@@ -83,12 +83,12 @@ public class Payment {
 
     /**
      * 
-     * <h6>获取账户的账单.</h6>
+     * <h6>Get payments history.</h6>
      * <pre>
-     * 获取指定六域链钱包的交易历史.
+     * Get transaction history for a specified SDChain wallet.
      * </pre>
      * 
-     * @param account 六域链地址
+     * @param account SDChain address
      * @return
      */
     public static JSONObject getPayments(String account) {
@@ -98,13 +98,13 @@ public class Payment {
 
     /**
      * 
-     * <h6>获取账户的账单.</h6>
+     * <h6>Get payments history.</h6>
      * <pre>
-     * 获取指定六域链钱包的交易历史.
+     * Get transaction history for a specified SDChain wallet.
      * </pre>
      * 
-     * @param account 六域链地址
-     * @param params 可选参数（详情见api文档）
+     * @param account SDChain address
+     * @param params 
      * @return
      */
     public static JSONObject getPayments(String account, String params) {
@@ -114,13 +114,13 @@ public class Payment {
 
     /**
      * 
-     * <h6>获取交易详情.</h6>
+     * <h6>Get payment information.</h6>
      * <pre>
-     * 根据六域链地址和交易hash获取指定交易的详情.
+     * Get details of the specified deal based on SDChain address and transaction hash.
      * </pre>
      * 
-     * @param account 六域链地址
-     * @param account 交易hash
+     * @param account SDChain address
+     * @param hash Transaction hash
      * @return
      */
     public static JSONObject getPaymentsDetail(String account, String hash) {

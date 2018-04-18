@@ -7,17 +7,17 @@ import org.slf4j.LoggerFactory;
 import net.sf.json.JSONObject;
 
 public class PaymentTest {
-    private static Logger logger = LoggerFactory.getLogger(PaymentTest.class); // 日志记录
+    private static Logger logger = LoggerFactory.getLogger(PaymentTest.class); 
 
     @Test
     public void run() throws Exception {
-        //转账
+        //Payment
         payment();
-        //转账带备注
+        //Payment with memos
         //paymentHasMemos();
-        //获取账单
+        //Get Payments
         //getPayments();
-        //获取转账详情
+        //Get payments detail
         //getPaymentsDetail();
     }
 

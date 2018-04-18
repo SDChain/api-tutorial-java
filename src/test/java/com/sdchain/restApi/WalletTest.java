@@ -7,15 +7,15 @@ import org.slf4j.LoggerFactory;
 import net.sf.json.JSONObject;
 
 public class WalletTest {
-    private static Logger logger = LoggerFactory.getLogger(WalletTest.class); // 日志记录
+    private static Logger logger = LoggerFactory.getLogger(WalletTest.class); 
 
     @Test
     public void run() throws Exception {
-        //获取钱包
+        //Generate New Wallet
         getNewWallet();
-        //获取激活钱包
+        //Activate wallet
         //activeWallet();
-        //查询余额
+        //Get balance
         //getBalance();
     }
 

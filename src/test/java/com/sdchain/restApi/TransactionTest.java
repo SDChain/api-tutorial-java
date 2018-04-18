@@ -7,11 +7,11 @@ import org.slf4j.LoggerFactory;
 import net.sf.json.JSONObject;
 
 public class TransactionTest {
-    private static Logger logger = LoggerFactory.getLogger(TransactionTest.class); // 日志记录
+    private static Logger logger = LoggerFactory.getLogger(TransactionTest.class); 
 
     @Test
     public void run() throws Exception {
-        //获取交易详情
+        //Get transaction detail
         getTransactionDetail();
     }
 
